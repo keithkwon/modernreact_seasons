@@ -25,7 +25,7 @@ class App extends React.Component {
     console.log("Updated");
   }
 
-  render() {
+  renderContent() {
     if (this.state.errorMessage && !this.state.lat) {
       return <div> Error: {this.state.errorMessage} </div>;
     }
@@ -35,6 +35,14 @@ class App extends React.Component {
 
     return (
       <Spinner message="Please allow location. Your location is saved on your 'browser' in a special place called 'cache'. We will never know your private information!" />
+    );
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <this.renderContent />
+      </div>
     );
   }
 }
